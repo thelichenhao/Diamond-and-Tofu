@@ -1,0 +1,9 @@
+{% for thread in threads %}
+    <div>
+        <h2>{{ thread.title }}</h2>
+        <p>{{ thread.content }}</p>
+        <p>Posted on {{ thread.created_at|date:"F j, Y, P" }}</p>
+    </div>
+{% empty %}
+    <p>No threads have been created yet.</p>
+{% endfor %}

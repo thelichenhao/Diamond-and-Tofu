@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Home</title>
+</head>
+<body>
+    <h1>Welcome to the Forum</h1>
+    <h2>Popular Posts</h2>
+    <ul>
+        {% for thread in popular_threads %}
+            <li>{{ thread.title }} - {{ thread.author.username }}</li>
+        {% endfor %}
+    </ul>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <h2>Browse by Region</h2>
+            <ul>
+                {% for region in regions %}
+                    <li><a href="{% url 'forum_app:region' region %}">{{ region }}</a></li>
+                    
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h2>Browse by Interest</h2>
+            <ul>
+                {% for interest in interests %}
+                    <li>{{ interest }}</li>
+                    <li><a href="{% url 'forum_app:interest' interest %}">{{ interest }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+{% extends "forum_app/base.html" %}
+
+{% block content %}
+<h1>Threads about {{ interest_name }}</h1>
+<ul>
+{% for thread in threads %}
+    <li>{{ thread.title }} - {{ thread.author.username }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
