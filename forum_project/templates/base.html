@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,20 +13,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">My Forum</a>
+            <a class="navbar-brand" href="{% url 'forum_app:home' %}">My Forum</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" href="{% url 'forum_app:home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'posts' %}">Posts</a>
+                        <a class="nav-link" href="{% url 'forum_post:post_list' %}">Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_post' %}">New Post</a>
+                        <a class="nav-link" href="{% url 'forum_post:post_create' %}">New Post</a>
                     </li>
                 </ul>
             </div>
