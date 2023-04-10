@@ -28,5 +28,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('forum_app.urls')),
     path('login/', include('forum_login.urls')),
-    path('post/', include('forum_post.urls')),
+    path('posts/', include('forum_post.urls')),
 ]
