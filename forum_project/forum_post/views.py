@@ -22,7 +22,13 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Forum Post'
+
+        post = ForumPost.objects.all().last()
+        context.update({
+            'title': post.title,
+            'author': post.author,
+            'body': post.body,
+        })
         return context
     
 class PostCreateView(CreateView):
