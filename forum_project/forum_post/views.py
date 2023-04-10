@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import ForumPost
+from .forms import PostCreateForm
 from django.views.generic import ListView, DetailView, CreateView
 
 class PostListView(ListView):
@@ -13,6 +14,9 @@ class PostListView(ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Forum Posts'
         return context
+    
+    def get_queryset(self):
+        return ForumPost.objects.all().order_by('-created_at')
 
 # Create your views here.
 class PostDetailView(DetailView):
@@ -23,7 +27,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        post = ForumPost.objects.all().last()
+        post = ForumPost.objects.get(id=self.kwargs['post_id'])
         context.update({
             'title': post.title,
             'author': post.author,
@@ -33,6 +37,7 @@ class PostDetailView(DetailView):
     
 class PostCreateView(CreateView):
     model = ForumPost
+
     template_name = 'forum_post/post_create.html'
     fields = ['title', 'author', 'body']
 

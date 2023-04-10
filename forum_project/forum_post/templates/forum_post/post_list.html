@@ -3,6 +3,12 @@
 {% block title %}Post List{% endblock %}
 
 {% block content %}
-    <h1>Welcome to My Forum</h1>
-    <p>This is the home page of the forum.</p>
+    <h1>Post List</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'forum_post:post_detail' post.id %}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
