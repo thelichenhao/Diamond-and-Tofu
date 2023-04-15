@@ -18,7 +18,7 @@ Including another URLconf
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
-    
+
 # ]
 
 from django.contrib import admin

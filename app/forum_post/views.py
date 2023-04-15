@@ -3,6 +3,7 @@ from .models import ForumPost
 from .forms import PostCreateForm
 from django.views.generic import ListView, DetailView, CreateView
 
+
 class PostListView(ListView):
     model = ForumPost
     template_name = 'forum_post/post_list.html'
@@ -14,9 +15,10 @@ class PostListView(ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Forum Posts'
         return context
-    
+
     def get_queryset(self):
         return ForumPost.objects.all().order_by('-created_at')
+
 
 # Create your views here.
 class PostDetailView(DetailView):
@@ -34,7 +36,8 @@ class PostDetailView(DetailView):
             'body': post.body,
         })
         return context
-    
+
+
 class PostCreateView(CreateView):
     model = ForumPost
 
