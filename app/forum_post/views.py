@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import ForumPost
 from .forms import PostCreateForm
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.decorators import login_required
 
 
 class PostListView(ListView):
