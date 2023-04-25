@@ -41,7 +41,6 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = ForumPost
-
     template_name = 'forum_post/post_create.html'
     fields = ['title', 'author', 'body']
 
@@ -49,3 +48,8 @@ class PostCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Create a Forum Post'
         return context
+    
+    @login_required
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)

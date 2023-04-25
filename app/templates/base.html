@@ -29,7 +29,19 @@
                     <li class="nav-item"><a class="nav-link active" href="#">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
-                </ul><a class="btn btn-primary ms-md-2" role="button" href="#">Sign Up</a>
+                </ul>
+                {% if request.user.is_authenticated %}
+
+                    {% comment %} <a class="btn btn-primary ms-md-2" role="button" href="{% url 'profile' %}"> {{ request.user.id }} </a>
+                    <a class="btn btn-primary ms-md-2" role="button" href="{% url 'logout' %}">Logout</a> {% endcomment %}
+
+                {% else %}
+
+                    <a class="btn  btn-primary ms-md-2" role="button" href={% url 'forum_login:login' %}>Login</a>
+                    <a class="btn btn-primary ms-md-2" role="button" href={% url 'forum_login:register' %}>Sign Up</a>
+
+                {% endif %}
+                
             </div>
         </div>
     </nav>
