@@ -21,10 +21,11 @@ from .models import Thread
 #         'regions': regions,
 #         'interests': interests,
 #     }
-    
+
 #     return render(request, 'forum_app/home.html', context)
 
 # forum_app/views.py
+
 
 def home(request):
     threads = Thread.objects.all()
@@ -38,6 +39,7 @@ def home(request):
 def region(request, region_name):
     threads = Thread.objects.filter(region=region_name)
     return render(request, 'forum_app/region.html', {'threads': threads, 'region_name': region_name})
+
 
 def interest(request, interest_name):
     threads = Thread.objects.filter(interest=interest_name)

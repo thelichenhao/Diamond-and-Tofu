@@ -18,7 +18,7 @@ Including another URLconf
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
-    
+
 # ]
 
 from django.contrib import admin
@@ -28,4 +28,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('forum_app.urls')),
     path('login/', include('forum_login.urls')),
+    path('posts/', include('forum_post.urls')),
 ]

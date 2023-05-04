@@ -1,0 +1,41 @@
+version: '3.8'
+
+name: diamond_tofu
+
+services:
+  web:
+    container_name: diamond_tofu_web
+    build: 
+      context: ./app
+      dockerfile: Dockerfile.prod
+    command: gunicorn forum_project.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/home/app/web/static
+    expose:
+      - "8000"
+    env_file:
+      - ./.env.prod
+    depends_on:
+      - db
+  
+  db:
+    container_name: diamond_tofu_db
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.prod.db
+
+  nginx:
+    container_name: diamond_tofu_nginx
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/web/static
+    ports:
+      - "1337:80"
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  static_volume:
