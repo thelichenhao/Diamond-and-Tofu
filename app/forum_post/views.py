@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import ForumPost
 from .forms import PostCreateForm
 from django.views.generic import ListView, DetailView, CreateView
@@ -42,14 +43,14 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = ForumPost
     template_name = 'forum_post/post_create.html'
-    fields = ['title', 'author', 'body']
+    fields = ['title', 'body']
+    success_url = reverse_lazy('post_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Create a Forum Post'
         return context
     
-    @login_required
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
