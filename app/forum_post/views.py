@@ -26,12 +26,13 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = ForumPost
     template_name = 'forum_post/post_detail.html'
-    context_object_name = 'post'
+    pk_url_kwarg = 'post_id'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        post = ForumPost.objects.get(id=self.kwargs['post_id'])
+        post = ForumPost.objects.get(pk=self.kwargs['post_id'])
+
         context.update({
             'title': post.title,
             'author': post.author,
@@ -44,7 +45,7 @@ class PostCreateView(CreateView):
     model = ForumPost
     template_name = 'forum_post/post_create.html'
     fields = ['title', 'body']
-    success_url = reverse_lazy('post_list')
+    success_url = reverse_lazy('forum_post:post_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
