@@ -1,6 +1,6 @@
 # views.py
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views import View
 
@@ -35,4 +35,11 @@ class RegisterView(View):
         password = request.POST['password']
         user = User.objects.create_user(username=username, password=password)
         user.save()
+        return redirect('/login')
+
+
+class LogoutView(View):
+
+    def get(self, request):
+        logout(request)
         return redirect('/login')
