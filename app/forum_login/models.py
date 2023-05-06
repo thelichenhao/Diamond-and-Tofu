@@ -17,15 +17,19 @@ class Address(models.Model):
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
 
+    # Personal info
     email = models.EmailField(_("email address"), unique=True)
     name = models.CharField(max_length=100, default="Anonymous")
-    tofu_credit = models.IntegerField(default=0)
     gender = models.CharField(max_length=50, default="I do not wish to provide this information")
     description = models.TextField(max_length=500, blank=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True)
     address = models.ForeignKey(Address, on_delete=models.CASCADE, blank=True, null=True)
-    date_joined = models.DateTimeField(auto_now_add=True)
 
+    # Metadata
+    date_joined = models.DateTimeField(auto_now_add=True)
+    tofu_credit = models.IntegerField(default=0)
+
+    # Permissions
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)

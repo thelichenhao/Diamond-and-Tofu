@@ -1,5 +1,6 @@
 # views.py
 from django.contrib.auth.models import User
+from .models import CustomUser
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views import View
@@ -13,9 +14,9 @@ class LoginView(View):
         return render(request, self.template_name, {'error_msg': error_msg})
 
     def post(self, request):
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
             return redirect('/')  # replace 'home' with the name of your home page
@@ -31,9 +32,9 @@ class RegisterView(View):
         return render(request, self.template_name)
 
     def post(self, request):
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
-        user = User.objects.create_user(username=username, password=password)
+        user = CustomUser.objects.create_user(email=email, password=password)
         user.save()
         return redirect('/login')
 
