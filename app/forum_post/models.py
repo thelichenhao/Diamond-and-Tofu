@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from forum_login.models import CustomUser
 
 
 # Create your models here.
@@ -8,7 +9,7 @@ from django.urls import reverse
 class ForumPost(models.Model):
     # Fields
     title = models.CharField(max_length=255)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -29,7 +30,7 @@ class ForumPost(models.Model):
 class ForumComment(models.Model):
     # Fields
     post = models.ForeignKey(ForumPost, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
