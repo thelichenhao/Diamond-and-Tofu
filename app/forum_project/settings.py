@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'forum_app.apps.ForumAppConfig',
     'forum_login.apps.ForumLoginConfig',
     'forum_post.apps.ForumPostConfig',
+    'about_page.apps.ForumPostConfig',
 ]
 
 MIDDLEWARE = [

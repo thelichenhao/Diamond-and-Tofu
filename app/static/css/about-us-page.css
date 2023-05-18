@@ -1,0 +1,372 @@
+/* screen - about-us-page */
+
+.about-us-page {
+    align-items: center;
+    background-color: var(--white);
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 327px;
+    min-width: 1440px;
+    position: relative;
+  }
+  
+  .about-us-page .nav-header {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 40px 80px 0px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .about-us-page .diamond-tofu-logo {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 16px;
+    padding: 0px 5px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .about-us-page .logo-2 {
+    height: 43.43px;
+    margin-bottom: -1.69px;
+    margin-left: -1.74px;
+    margin-top: -1.74px;
+    min-width: 47.42px;
+    position: relative;
+  }
+  
+  .about-us-page .name {
+    color: var(--black);
+    font-family: var(--font-family-comfortaa);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: 268px;
+  }
+  
+  .about-us-page .navbar {
+    align-items: baseline;
+    display: flex;
+    gap: 40px;
+    margin-bottom: -20.00px;
+    margin-top: -20.00px;
+    padding: 20px 0px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .about-us-page .navbar-link {
+    letter-spacing: -0.27px;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+  }
+  
+  .about-us-page .navbar-link-log-in {
+    cursor: pointer;
+    letter-spacing: -0.27px;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+  }
+  
+  .about-us-page .join-us {
+    background-color: var(--black);
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    min-width: 115px;
+    position: relative;
+  }
+  
+  .about-us-page .join-us-1 {
+    color: var(--white);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    height: 22px;
+    left: 25px;
+    letter-spacing: -0.27px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 8px;
+  }
+  
+  .about-us-page .frame-50 {
+    flex-direction: column;
+    gap: 115px;
+  }
+  
+  .about-us-page .frame {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 115px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .about-us-page .frame-34 {
+    gap: 80px;
+  }
+  
+  .about-us-page .frame-26 {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .about-us-page .frame-47 {
+    gap: 20px;
+  }
+  
+  .about-us-page .tofu-single {
+    height: 45.7px;
+    margin-left: -2.85px;
+    margin-top: -2.85px;
+    min-width: 50.57px;
+    position: relative;
+  }
+  
+  .about-us-page .frame-46 {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-us-page .title {
+    letter-spacing: -0.53px;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .lorem-ipsum-dolor-si {
+    letter-spacing: -0.27px;
+    line-height: 25px;
+    position: relative;
+    width: 437.2px;
+  }
+  
+  .about-us-page .rectangle-10 {
+    background-color: var(--alto);
+    height: 348px;
+    min-width: 643px;
+    position: relative;
+  }
+  
+  .about-us-page .down-arrow {
+    height: 25.84px;
+    margin-bottom: -3.58px;
+    min-width: 43.58px;
+    position: relative;
+  }
+  
+  .about-us-page .our-vision-mission {
+    letter-spacing: -0.53px;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .equality-communication-without-boundary {
+    letter-spacing: -0.27px;
+    line-height: 25px;
+    position: relative;
+    width: 437.2px;
+  }
+  
+  .about-us-page .our-team {
+    letter-spacing: -0.53px;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .lorem-ipsum-dolor-si-1 {
+    letter-spacing: -0.27px;
+    line-height: 25px;
+    position: relative;
+    width: 437.2px;
+  }
+  
+  .about-us-page .footer {
+    align-items: flex-start;
+    background-color: #4c4c4d;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    height: auto;
+    mix-blend-mode: normal;
+    padding: 30px 80px 50px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .about-us-page .diamond-tofu-logo-1 {
+    align-items: center;
+    display: flex;
+    gap: 13px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .about-us-page .logo-2-1 {
+    height: 33.57px;
+    margin-bottom: -1.77px;
+    margin-left: -1.81px;
+    margin-top: -1.81px;
+    min-width: 36.57px;
+    position: relative;
+  }
+  
+  .about-us-page .name-1 {
+    color: var(--white);
+    font-family: var(--font-family-comfortaa);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: 166.77px;
+  }
+  
+  .about-us-page .frame-31 {
+    gap: 150px;
+  }
+  
+  .about-us-page .frame-1 {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .about-us-page .features {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .community {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .partnerships {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .news {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .terms-of-use {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .privacy-policy {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .site-map {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .contact-us {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .xxxx {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .xxxxxx {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .xxxx-1 {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .xxxxx-xxxx {
+    letter-spacing: -0.24px;
+    line-height: 30px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us-page .down-arrow-3 {
+    height: 25.84px;
+    margin-bottom: -3.58px;
+    min-width: 43.58px;
+    position: relative;
+  }
+  
+  .about-us-page .frame-2 {
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+    width: fit-content;
+  }
+  

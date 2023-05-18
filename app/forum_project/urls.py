@@ -29,4 +29,5 @@ urlpatterns = [
     path('', include('forum_app.urls')),
     path('login/', include('forum_login.urls')),
     path('posts/', include('forum_post.urls')),
+    path('about_page/', include('about_page.urls'))
 ]
