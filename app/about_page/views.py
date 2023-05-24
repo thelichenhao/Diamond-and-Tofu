@@ -6,4 +6,4 @@ from django.template import loader
 
 def about_page(request):
   template = loader.get_template('about_page.html')
-  return HttpResponse(template.render(request)) 
+  return HttpResponse(template.render({}, request)) 
