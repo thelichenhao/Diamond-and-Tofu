@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from .models import ForumPost
+from .models import ForumPost, Topic
 from .forms import PostCreateForm
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.decorators import login_required
@@ -15,7 +15,11 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Forum Posts'
+
+        context.update({
+            'title': 'Forum Posts',
+            'topics': Topic.objects.all(),
+        })
         return context
 
     def get_queryset(self):

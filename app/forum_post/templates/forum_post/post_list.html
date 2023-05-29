@@ -1,14 +1,72 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Post List{% endblock %}
 
 {% block content %}
-    <h1>Post List</h1>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <a href="{% url 'forum_post:post_detail' post.id %}">{{ post.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="container">
+    <div class="row" style="height: 220px">
+        <div class="col-md-4 col-xl-3 bg-img" style="text-align: center"><p style="background: url({% static 'img/bg-1.svg' %}) center; height: 200px; width: 200px; padding:60px">What is a web3 forum?</p></div>
+        <div class="col-md-4 col-xl-3" style="text-align: center"><p style="background: url({% static 'img/bg-2.svg' %}) center; height: 200px; width: 200px; padding:60px">5 ways of earning NFT</p></div>
+        <div class="col-md-4 col-xl-6" style="text-align: center"><p style="background: url({% static 'img/bg-4.svg' %}) center/cover; height: 200px; width: 400px; padding:60px">Who are Diamond Tofu?</p></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-xl-2">
+            <div class="row" style="height: 60px">
+                <div class="col"><strong>Topics</strong></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        {% for topic in topics %}
+                        <li class="list-group-item"><a href="#">{{ topic.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-xl-10">
+            <div class="row" style="height: 60px">
+                <div class="col"><strong>Discussions</strong></div>
+                <div class="col" style="text-align: right;"><button class="btn btn-primary" type="button">+ Start Posting</button></div>
+            </div>
+            <div class="row" style="height: 60px">
+                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Newest</button></div>
+                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Trending</button></div>
+                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Most Liked</button></div>
+                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Location</button></div>
+                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">More</button></div>
+                <div class="col" style="text-align: center;"><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            {% for post in posts %}
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col"><a href="#">{{ post.title }}</a></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Paragraph</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"><a href="#">{{ post.author }}</a></div>
+                                <div class="col"><strong>{{ post.created_at }}</strong></div>
+                                <div class="col"><a href="#">{{ post.num_comments }}</a></div>
+                            </div>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

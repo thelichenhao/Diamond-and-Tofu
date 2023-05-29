@@ -35,6 +35,7 @@ class Topic(models.Model):
 class ForumPost(Content):
     # Fields
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts', null=True, blank=True)
+    num_comments = models.IntegerField(default=0)
 
     # Meta
     class Meta:
