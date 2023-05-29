@@ -31,12 +31,12 @@
         <div class="col-md-8 col-xl-10">
             <div class="row" style="height: 60px">
                 <div class="col"><strong>Discussions</strong></div>
-                <div class="col" style="text-align: right;"><button class="btn btn-primary" type="button">+ Start Posting</button></div>
+                <div class="col" style="text-align: right;"><a class="btn btn-primary" href="{% url 'forum_post:post_create' %}" style="background: rgb(0, 0, 0)">+ Start Posting</a></div>
             </div>
             <div class="row" style="height: 60px">
-                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Newest</button></div>
-                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Trending</button></div>
-                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Most Liked</button></div>
+                <div class="col" style="text-align: center;"><a class="btn btn-primary" href="#" style="background: rgb(0, 0, 0)">Newest</a></div>
+                <div class="col" style="text-align: center;"><a class="btn btn-primary" href="#" style="background: rgb(0, 0, 0)">Trending</a></div>
+                <div class="col" style="text-align: center;"><a class="btn btn-primary" href="#" style="background: rgb(0, 0, 0)">Most Liked</a></div>
                 <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">Location</button></div>
                 <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button">More</button></div>
                 <div class="col" style="text-align: center;"><input type="text"></div>
@@ -49,11 +49,11 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col"><a href="#">{{ post.title }}</a></div>
+                                        <div class="col"><a href="{% url 'forum_post:post_detail' post.id %}">{{ post.title }}</a></div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p>Paragraph</p>
+                                            <p>{{ post.body|truncatewords:10 }}</p>
                                         </div>
                                     </div>
                                 </div>
